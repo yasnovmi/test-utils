@@ -53,21 +53,14 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
 }
 
-tasks.register("publish") {
-    group = 'upload'
-    description = 'Publish to maven repository'
-
-    doLast {
-        uploadArchives {
-            repositories {
-                mavenDeployer {
-                    repository(url: System.getenv('MAVEN_URL')) {
-                        authentication(
-                                userName: System.getenv('MAVEN_LOGIN'),
-                                password: System.getenv('MAVEN_PASS')
-                        )
-                    }
-                }
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: System.getenv('MAVEN_URL')) {
+                authentication(
+                        userName: System.getenv('MAVEN_LOGIN'),
+                        password: System.getenv('MAVEN_PASS')
+                )
             }
         }
     }
