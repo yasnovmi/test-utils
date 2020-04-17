@@ -34,7 +34,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.springframework.data:spring-data-jpa"
+    compileOnly "org.springframework.data:spring-data-commons"
+    compileOnly "org.junit.jupiter:junit-jupiter"
     compileOnly "org.mockito:mockito-core"
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
 }
